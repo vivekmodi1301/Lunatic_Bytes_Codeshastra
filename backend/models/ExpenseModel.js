@@ -28,6 +28,11 @@ const ExpenseSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+    email: {
+        type: String,
+        required: true,
+        trim: true
+    },
     description: {
         type: String,
         required: true,

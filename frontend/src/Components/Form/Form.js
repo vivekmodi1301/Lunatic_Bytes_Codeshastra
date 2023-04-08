@@ -5,19 +5,24 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useGlobalContext } from '../../context/globalContext';
 import Button from '../Button/Button';
 import { plus } from '../../utils/Icons';
+import { getAuth } from '@firebase/auth';
 
 
 function Form() {
     const {addIncome, getIncomes, error, setError} = useGlobalContext()
+    const auth = getAuth()
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
         date: '',
         category: '',
         description: '',
+        email: auth.currentUser.email
     })
 
-    const { title, amount, date, category,description } = inputState;
+    const { title, amount, date, category,description,email } = inputState;
+
+
 
     const handleInput = name => e => {
         setInputState({...inputState, [name]: e.target.value})
@@ -33,6 +38,7 @@ function Form() {
             date: '',
             category: '',
             description: '',
+            email: ''
         })
     }
 
