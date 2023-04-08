@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "592155131900",
+    "project_id": "lunatic-expense-app",
+    "storage_bucket": "lunatic-expense-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592155131900:android:26f391945d9752633d7c79",
+        "android_client_info": {
+          "package_name": "com.example.lunatic_expense_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "592155131900-d4fk5k9pkq8a00v6ph4dingv4l3qdsfv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6Q5MpRk5Qn3hzSELdZRlxTM_SChRgkIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592155131900-d4fk5k9pkq8a00v6ph4dingv4l3qdsfv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
