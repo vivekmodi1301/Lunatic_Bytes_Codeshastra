@@ -11,6 +11,8 @@ import { Toaster } from 'react-hot-toast';
 import { SpeechProvider } from '@speechly/react-client';
 import { Provider } from './context/context';
 import Speechly from './Components/Speechly/Speechly';
+import ImageToText from './ocr/ImageToText';
+import StudentLoan from './Components/StudentLoan/StudentLoan';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -40,6 +42,8 @@ root.render(
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/home' element={<App />} />
           <Route exact path='/speechly' element={<Speechly />} />
+          <Route exact path='/imagetotext' element={<ImageToText />} />
+          <Route exact path='/loanmanagement' element={<StudentLoan />} />
          
           <Route path='*' element={<Navigate to='/login' />} />
         </Routes>
