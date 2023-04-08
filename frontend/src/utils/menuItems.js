@@ -9,9 +9,9 @@ export const menuItems = [
     },
     {
         id: 2,
-        title: "View Transactions",
+        title: "Loan Management",
         icon: transactions,
-        link: "/dashboard",
+        link: "/loan-management",
     },
     {
         id: 3,
@@ -30,5 +30,11 @@ export const menuItems = [
         title: "Voice Assistance",
         icon: expenses,
         link: "/dashboard",
+    },
+    {
+        id: 6,
+        title: "Image to Text",
+        icon: expenses,
+        link: "/imagetotext",
     },
 ]
