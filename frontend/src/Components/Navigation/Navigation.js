@@ -3,8 +3,21 @@ import styled from 'styled-components'
 import avatar from '../../img/avatar.png'
 import { signout } from '../../utils/Icons'
 import { menuItems } from '../../utils/menuItems'
+import { getAuth, signOut } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-hot-toast'
 
 function Navigation({active, setActive}) {
+
+    const auth = getAuth()
+    const navigate = useNavigate()
+    const handleSignOut = async () => {
+        signOut(auth).then(() => {
+          toast.success("Looged Out SuccessFully");
+          navigate("/login");
+        });
+      };
+    
     
     return (
         <NavStyled>
@@ -28,7 +41,7 @@ function Navigation({active, setActive}) {
                 })}
             </ul>
             <div className="bottom-nav">
-                <li>
+                <li style={{cursor:"pointer"}} onClick={handleSignOut} >
                     {signout} Sign Out
                 </li>
             </div>
