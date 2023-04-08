@@ -8,9 +8,15 @@ import './index.css'
 import SignUp from './Components/Signup/SignUp';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { SpeechProvider } from '@speechly/react-client';
+import { Provider } from './context/context';
+import Speechly from './Components/Speechly/Speechly';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <SpeechProvider appId="7c4aee08-1073-4a32-b862-ebe1850e0732" language="en-US">
+    <Provider>
     <GlobalStyle />
     <GlobalProvider>
       {/* <App /> */}
@@ -33,6 +39,7 @@ root.render(
           <Route exact path='/register' element={<SignUp />} />
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/home' element={<App />} />
+          <Route exact path='/speechly' element={<Speechly />} />
          
           <Route path='*' element={<Navigate to='/login' />} />
         </Routes>
@@ -40,6 +47,8 @@ root.render(
       </BrowserRouter>
       
     </GlobalProvider>
+    </Provider>
+    </SpeechProvider>
   </React.StrictMode>
 );
 
