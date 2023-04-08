@@ -17,7 +17,7 @@ function Dashboard() {
     return (
         <DashboardStyled>
             <InnerLayout>
-                <h1>All Transactions</h1>
+                <h1 style={{marginBottom: "1.5rem"}}>All Transactions</h1>
                 <div className="stats-con">
                     <div className="chart-con">
                         <Chart />
