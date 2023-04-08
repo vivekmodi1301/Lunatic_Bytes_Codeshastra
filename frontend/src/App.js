@@ -9,6 +9,8 @@ import Income from './Components/Income/Income'
 import Expenses from './Components/Expenses/Expenses';
 import { useGlobalContext } from './context/globalContext';
 import Speechly from './Components/Speechly/Speechly';
+import ImageToText from './ocr/ImageToText';
+import StudentLoan from './Components/StudentLoan/StudentLoan';
 
 function App() {
   const [active, setActive] = useState(1)
@@ -21,13 +23,15 @@ function App() {
       case 1:
         return <Dashboard />
       case 2:
-        return <Dashboard />
+        return <StudentLoan />
       case 3:
         return <Income />
       case 4: 
         return <Expenses />
       case 5:
         return <Speechly/>
+      case 6:
+        return <ImageToText/>
       default: 
         return <Dashboard />
     }

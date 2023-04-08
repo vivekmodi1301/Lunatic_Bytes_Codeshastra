@@ -18,13 +18,19 @@ function Navigation({active, setActive}) {
         });
       };
     
+      let namee = ""
+      for(let i=0;i<auth.currentUser.email.length;i++){
+        if(auth.currentUser.email[i]=='@')
+            break;
+        namee+=auth.currentUser.email[i];
+      }
     
     return (
         <NavStyled>
             <div className="user-con">
                 <img src={avatar} alt="" />
                 <div className="text">
-                    <h2>Mike</h2>
+                    <h2>{namee}</h2>
                     <p>Your Money</p>
                 </div>
             </div>
