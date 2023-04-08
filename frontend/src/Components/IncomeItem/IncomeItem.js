@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { dateFormat } from '../../utils/dateFormat';
 import { bitcoin, book, calender, card, circle, clothing, comment, dollar, food, freelance, medical, money, piggy, stocks, takeaway, trash, tv, users, yt } from '../../utils/Icons';
 import Button from '../Button/Button';
+import { getAuth } from '@firebase/auth';
 
 function IncomeItem({
     id,
@@ -12,6 +13,7 @@ function IncomeItem({
     category,
     description,
     deleteItem,
+    email,
     indicatorColor,
     type
 }) {
@@ -39,6 +41,10 @@ function IncomeItem({
         }
     }
 
+    const auth = getAuth()
+
+    console.log(email)
+
     const expenseCatIcon = () => {
         switch (category) {
             case 'education':
@@ -61,15 +67,23 @@ function IncomeItem({
                 return ''
         }
     }
+    console.log(email,"hh")
 
     console.log('type', type)
 
     return (
-        <IncomeItemStyled indicator={indicatorColor}>
-            <div className="icon">
+            <>
+            
+
+            {
+                (email === auth.currentUser.email) ? (
+                    <IncomeItemStyled indicator={indicatorColor}>
+
+                <div className="content">
+
+                <div className="icon">
                 {type === 'expense' ? expenseCatIcon() : categoryIcon()}
             </div>
-            <div className="content">
                 <h5>{title}</h5>
                 <div className="inner-content">
                     <div className="text">
@@ -94,7 +108,20 @@ function IncomeItem({
                     </div>
                 </div>
             </div>
-        </IncomeItemStyled>
+
+                </IncomeItemStyled>
+
+                     
+            
+
+            ):""
+            }
+            
+            </>
+            
+           
+            
+            
     )
 }
 

@@ -13,7 +13,7 @@ function Navigation({active, setActive}) {
     const navigate = useNavigate()
     const handleSignOut = async () => {
         signOut(auth).then(() => {
-          toast.success("Looged Out SuccessFully");
+          toast.success("logged Out SuccessFully");
           navigate("/login");
         });
       };
