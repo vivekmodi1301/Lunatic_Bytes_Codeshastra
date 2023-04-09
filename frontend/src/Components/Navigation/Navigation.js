@@ -19,11 +19,11 @@ function Navigation({active, setActive}) {
       };
     
       let namee = ""
-      for(let i=0;i<auth.currentUser.email.length;i++){
-        if(auth.currentUser.email[i]=='@')
-            break;
-        namee+=auth.currentUser.email[i];
-      }
+    //   for(let i=0;i<auth.currentUser.email.length;i++){
+    //     if(auth.currentUser.email[i]=='@')
+    //         break;
+    //     namee+=auth.currentUser.email[i];
+    //   }
     
     return (
         <NavStyled>

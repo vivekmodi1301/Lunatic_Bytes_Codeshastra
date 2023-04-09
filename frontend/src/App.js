@@ -11,6 +11,8 @@ import { useGlobalContext } from './context/globalContext';
 import Speechly from './Components/Speechly/Speechly';
 import ImageToText from './ocr/ImageToText';
 import StudentLoan from './Components/StudentLoan/StudentLoan';
+// import StudentLoan from './Components/StudentLoan/StudentLoan';
+import Chat from './Components/Chat/Chat';
 
 function App() {
   const [active, setActive] = useState(1)
@@ -32,6 +34,8 @@ function App() {
         return <Speechly/>
       case 6:
         return <ImageToText/>
+      case 7: 
+        return <Chat />
       default: 
         return <Dashboard />
     }
