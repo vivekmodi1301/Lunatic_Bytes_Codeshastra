@@ -10,6 +10,7 @@ import { collection, addDoc, doc, setDoc } from "firebase/firestore";
 import { Form, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import firebaseMethods from "../../firebaseMethd/firebaseContext";
+import '../../assets/personal_fin.svg'
 
 function Login() {
 
@@ -30,7 +31,7 @@ function Login() {
   
    
   
-    const handleSignIn = () => {
+    const handleLogIn = () => {
       if (data.email == "" || data.password == "") {
         toast.error("Please Enter all Data");
         return;
@@ -60,6 +61,10 @@ function Login() {
       // console.log(currentUser.uid)
     });
 
+    const handleSignUp=()=>{
+      navigate("/register")
+    }
+
 
   return (
     <>
@@ -69,7 +74,8 @@ function Login() {
       <div className="flex flex-col items-center w-full pt-5 pr-10 pb-20 pl-10 lg:pt-20 lg:flex-row">
         <div className="w-full bg-cover relative max-w-md lg:max-w-2xl lg:w-7/12">
           <div className="flex flex-col items-center justify-center w-full h-full relative lg:pr-10">
-            <img src="https://res.cloudinary.com/macxenon/image/upload/v1631570592/Run_-_Health_qcghbu.png" className="btn-"/>
+            {/* <img src="https://res.cloudinary.com/macxenon/image/upload/v1631570592/Run_-_Health_qcghbu.png" className="btn-"/> */}
+            <img src="../../assets/savings.svg" className="btn-" />
           </div>
         </div>
         <div className="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
@@ -91,9 +97,11 @@ function Login() {
                     focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md"/>
               </div>
-              <div className="relative">
+              <div className="relative flex gap-10">
                 <button className="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-500
-                    rounded-lg transition duration-200 hover:bg-indigo-600 ease" type='submit'onClick={handleSignIn} >Submit</button>
+                    rounded-lg transition duration-200 hover:bg-indigo-600 ease" type='submit'onClick={handleLogIn} >Login</button>
+                    <button className="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-500
+                    rounded-lg transition duration-200 hover:bg-indigo-600 ease" type='submit'onClick={handleSignUp} >Sign Up</button>
               </div>
             </div>
           </div>

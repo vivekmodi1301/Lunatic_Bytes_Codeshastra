@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import avatar from '../../img/avatar.png'
 import { signout } from '../../utils/Icons'
@@ -19,19 +19,22 @@ function Navigation({active, setActive}) {
       };
     
       let namee = ""
-    //   for(let i=0;i<auth.currentUser.email.length;i++){
-    //     if(auth.currentUser.email[i]=='@')
-    //         break;
-    //     namee+=auth.currentUser.email[i];
-    //   }
+      useEffect(()=>{
+        setTimeout(()=>{
+            if(auth.currentUser?.email)
+            localStorage.setItem('email',auth.currentUser.email)
+        },1500)
+      },[])
+
+      
     
     return (
         <NavStyled>
-            <div className="user-con">
+            <div style={{marginTop:"1rem"}} className="user-con">
+                <h1 style={{fontSize:"2.125rem"}} className='text-lg'>Expenser</h1>
                 <img src={avatar} alt="" />
                 <div className="text">
-                    <h2>{namee}</h2>
-                    <p>Your Money</p>
+                    <h2>{localStorage.getItem('email')}</h2>
                 </div>
             </div>
             <ul className="menu-items">
@@ -70,6 +73,8 @@ const NavStyled = styled.nav`
     .user-con{
         height: 100px;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
         gap: 1rem;
         img{
@@ -110,6 +115,14 @@ const NavStyled = styled.nav`
                 font-size: 1.4rem;
                 transition: all .4s ease-in-out;
             }
+        }
+    }
+    @media (max-width: 768px) {
+        nav {
+            flex-direction: row;
+        }
+        .menu-items {
+            flex-direction: column;
         }
     }
 

@@ -1,4 +1,4 @@
-import {dashboard, expenses, transactions, trend,chat , comment} from '../utils/Icons'
+import {dashboard, expenses, transactions, trend,chat , comment,picture ,voicemic, imgText} from '../utils/Icons'
 
 export const menuItems = [
     {
@@ -28,13 +28,13 @@ export const menuItems = [
     {
         id: 5,
         title: "Voice Assistance",
-        icon: expenses,
+        icon: voicemic,
         link: "/dashboard",
     },
     {
         id: 6,
         title: "Image to Text",
-        icon: expenses,
+        icon: imgText,
         link: "/imagetotext",
     },
     {

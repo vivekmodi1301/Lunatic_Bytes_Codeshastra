@@ -29,3 +29,6 @@ export const tv = <i className="fa-solid fa-tv"></i>
 export const circle = <i className="fa-solid fa-circle-dot"></i>
 export const camera = <i className="fa-solid fa-camera-retro"></i>
 export const chat = <i className="fa fa-solid fa-comment-o" ></i>
+export const picture = <i class="fa-solid fa-file-image-o" aria-hidden="true"></i>
+export const voicemic = <i class="fa fa-microphone" aria-hidden="true"></i>
+export const imgText = <i class="fa fa-file-text" aria-hidden="true"></i>

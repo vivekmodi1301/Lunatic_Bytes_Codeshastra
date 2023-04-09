@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useGlobalContext } from "../../context/globalContext";
 import Button from "../Button/Button";
+import { NavLink } from "react-router-dom";
 // import { Slider } from '@mui/material';
 //import {Table} from 'react-bootstrap';
 
@@ -15,6 +16,9 @@ function StudentLoan(props) {
   const [roi, setRoi] = useState(null);
   const [emi, setEmi] = useState(null);
   const [interestamount, setInterestamount] = useState(null);
+  const [showAddLoan, setShowAddLoan] = useState(true)
+  const [showViewLoan, setShowViewLoan] = useState(false)
+  const [showStrat, setShowStrat] = useState(false)
 
   const changeTenure = (event) => {
     setTenure(event.target.value);
@@ -77,7 +81,8 @@ function StudentLoan(props) {
   return (
     <>
       <FormStyled>
-        {" "}
+
+    
         <div className="input-control">
           <input
             type="text"
@@ -159,7 +164,7 @@ function StudentLoan(props) {
             }}>
                 </Button>
             </td>
-            {/* <td>{tenure}</td> */}
+            <td>{tenure}</td>
             <td>{amount}</td>
             <td>{roi}</td>
             <td></td>
