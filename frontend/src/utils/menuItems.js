@@ -9,7 +9,7 @@ export const menuItems = [
     },
     {
         id: 2,
-        title: "Loan Management",
+        title: "EMI Calculator",
         icon: transactions,
         link: "/loan-management",
     },

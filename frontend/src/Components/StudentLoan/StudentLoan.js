@@ -116,16 +116,6 @@ function StudentLoan(props) {
           />
         </div>
 
-        <div className="submit-btn">
-          <Button
-            name={"Add Loan"}
-            bPad={".8rem 1.6rem"}
-            bRad={"20px"}
-            bg={"var(--color-accent"}
-            color={"#fff"}
-            onClick={handleLoan}
-          />
-        </div>
 
         <div className="submit-btn">
           <Button
@@ -140,53 +130,10 @@ function StudentLoan(props) {
 
         <div className="input-control">
           <h3>EMI to be paid monthly : {emi} </h3>
-          <h3>Amount to be paid: {interestamount} </h3>
+          <h3>Final Amount (Principal + Interest) to be paid: {interestamount} </h3>
         </div>
       
-
-        <table className="table-auto"> 
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Tenure</th>
-              <th>Loan Amount</th>
-              <th>RoI</th>
-              <th>EMI</th>
-              <th>Final Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            <td>#</td>
-            <td>
-            <Button onClick={(handleLoan) => {
-                this.tenure();
-                this.setTenure({ name: tenure});
-            }}>
-                </Button>
-            </td>
-            <td>{tenure}</td>
-            <td>{amount}</td>
-            <td>{roi}</td>
-            <td></td>
-            <td></td>
-            {/* <td>{tenure}</td> */}
-            {/* <td>{amount}</td>
-                <td>{roi}</td>
-                <td>{emi}</td>
-                <td>{interestamount}</td> */}
-          </tbody>
-        </table>
       
-
-      <div className="submit-btn">
-        <Button
-          name={"Generate Strategies"}
-          bPad={".8rem 1.6rem"}
-          bRad={"20px"}
-          bg={"var(--color-accent"}
-          color={"#fff"}
-        />
-      </div>
       </FormStyled>
     </>
   );

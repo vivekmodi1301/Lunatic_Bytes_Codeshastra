@@ -28,6 +28,7 @@ function ImageToText() {
         });
     };
   return (
+
     <div>
          <div>
               <input
@@ -42,16 +43,23 @@ function ImageToText() {
                 className="btn btn-primary mt-5"
               >Convert</button>
             </div>
-            <div>
+            <div style={{margin:"2rem"}}>
               {ocrResult && (
+                
+                <div>
+                <div>
+                  <img src={image} style={{width:"400px",height:"500px"}}/>
+                </div>
                 <div>
                   <p className='text-xl font-semibold'> Restaurant : {ocrResult.restaurant}</p>
                   <p className='text-xl font-semibold'> Total Amount  : {ocrResult.totalAmount}</p>
                   <p className='text-xl font-semibold'> Date {ocrResult.date}</p>
                 </div>
+                </div>
               )}
             </div>
     </div>
+    
   )
 }
 
